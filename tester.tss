@@ -1,0 +1,9 @@
+type AIResponse = { prompt: string; response: string };
+
+function evaluateResponse(data: AIResponse) {
+  if (!data.response) return "FAIL: Empty response";
+  if (data.response.length < 20) return "WARNING: Response too short";
+  return "PASS";
+}
+
+console.log(evaluateResponse({ prompt: "Test", response: "" }));
